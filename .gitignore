@@ -24,3 +24,4 @@ product-service/.classpath
 product-service/.project
 product-service/.settings/
 product-service/target/
+**.iml
