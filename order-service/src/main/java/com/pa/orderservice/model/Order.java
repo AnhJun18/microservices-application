@@ -1,15 +1,14 @@
 package com.pa.orderservice.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@Table(name = "orders")
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

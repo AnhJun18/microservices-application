@@ -1,2 +1,14 @@
-package com.pa.orderservice.payload.request;public class OrderRequest {
+package com.pa.orderservice.payload.request;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class OrderRequest {
+    private List<OrderLineItemRequest> orderLineItemRequestList;
 }

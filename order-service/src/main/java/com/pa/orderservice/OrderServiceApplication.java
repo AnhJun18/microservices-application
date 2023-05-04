@@ -1,2 +1,13 @@
-package com.pa.orderservice;public class OrderServiceApplication {
+package com.pa.orderservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class OrderServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(OrderServiceApplication.class, args);
+    }
+
 }
