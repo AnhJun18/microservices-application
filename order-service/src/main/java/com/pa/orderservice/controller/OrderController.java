@@ -13,7 +13,7 @@ public class OrderController {
     OrderService orderService;
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public String createOrder(@RequestBody OrderRequest orderRequest){
+    public String createOrder(@RequestBody OrderRequest orderRequest) throws IllegalAccessException {
         orderService.createOrder(orderRequest);
         return "Create order successfully";
     }
