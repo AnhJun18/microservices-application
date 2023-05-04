@@ -1,2 +1,10 @@
-package com.pa.inventoryservice.repository;public interface InventoryRepository {
+package com.pa.inventoryservice.repository;
+
+import com.pa.inventoryservice.model.Inventory;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface InventoryRepository extends JpaRepository<Inventory,Long> {
+    Optional<Inventory> findBySkuCode(String code);
 }
