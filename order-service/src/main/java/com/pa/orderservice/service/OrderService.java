@@ -23,7 +23,7 @@ public class OrderService {
     @Autowired
     OrderRepository orderRepository;
     @Autowired
-    WebClient webClient;
+    WebClient.Builder webClientBuilder;
 
     public void createOrder(OrderRequest orderRequest) throws IllegalAccessException {
 
@@ -37,7 +37,7 @@ public class OrderService {
                 .stream().map(OrderLineItem::getSkuCode)
                 .collect(Collectors.toList());
         //Check stock
-        InventoryResponse[] inventoryResponses = webClient.get().uri("http://localhost:9002/api/inventory",
+        InventoryResponse[] inventoryResponses = webClientBuilder.build().get().uri("http://inventory-service/api/inventory",
                 UriBuilder -> UriBuilder.queryParam("skuCode", params).build())
                 .retrieve()
                 .bodyToMono(InventoryResponse[].class)
